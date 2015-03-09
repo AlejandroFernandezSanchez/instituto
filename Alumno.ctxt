@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Alumno()
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Alumno\r\n
+comment1.params=
+comment1.target=java.lang.String\ toString()
+comment1.text=\r\n\ @return\ un\ string\ con\ todos\ los\ datos\r\n
+comment2.params=
+comment2.target=int\ media()
+comment3.params=
+comment3.target=boolean\ aprobado()
+numComments=4
