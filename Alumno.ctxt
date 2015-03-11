@@ -1,6 +1,6 @@
 #BlueJ class context
-comment0.params=
-comment0.target=Alumno()
+comment0.params=nombre\ edad
+comment0.target=Alumno(java.lang.String,\ int)
 comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Alumno\r\n
 comment1.params=
 comment1.target=java.lang.String\ toString()
@@ -9,4 +9,8 @@ comment2.params=
 comment2.target=int\ media()
 comment3.params=
 comment3.target=boolean\ aprobado()
-numComments=4
+comment4.params=index
+comment4.target=int\ getNota(int)
+comment5.params=nota
+comment5.target=void\ putNota(int)
+numComments=6

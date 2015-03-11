@@ -10,15 +10,20 @@ public class Alumno
     // instance variables - replace the example below with your own
     private String nombre;
     private int edad;
-    private int clase;
+    private static int AULA = 0;;
+    private int numClase;
     private ArrayListInt notas;
 
     /**
      * Constructor for objects of class Alumno
      */
-    public Alumno()
+    public Alumno(String nombre, int edad)
     {
         notas = new ArrayListInt();
+        this.nombre = nombre;
+        this.edad = edad;
+        AULA++;
+        numClase = AULA;
     }
 
     /**
@@ -27,30 +32,66 @@ public class Alumno
     public String toString()
     {
         // put your code here
-        return "nombre: " + nombre + "edad: " + edad + "clase: " + clase + "media de las notas: " + media(); 
+        String toString = "nombre: " + nombre + ". Edad: " + edad + ". Nº de alumno: " + numClase + ". Media de las notas: " + media();
+        if (notas.size()!=0)
+        {
+            toString = toString + " Y sus notas son: ";
+            for (int i = 0; i<notas.size(); i++)
+            {
+                toString = toString + " NOTA" + (i+1) + " = " + notas.get(i);
+            }
+            if (aprobado())
+            {
+                toString += ". Está aprobado con media " + media() + ".";
+                
+            }     
+            else
+            {
+                toString += ". Está suspenso con media " +media() + ".";
+            }
+        }
+        else
+        {
+            toString += "No hay notas aun.";
+        }
+        System.out.println(toString);
+        return toString; 
     }
     
     public int media()
     {
-        int media = 0;
-        for (int i = 0; i<notas.size(); i++)
-        {
-            media = media + notas.get(i);
+        int media = -1;
+        if(notas.size()!=0)
+        {            
+            for (int i = 0; i<notas.size(); i++)
+            {
+                media = media + notas.get(i);
+            }
+            media = media/notas.size();
         }
-        media = media/notas.size();
         return  media;
     }
     
      public boolean aprobado()
     {
         boolean  aprobado= false;
-        if (media()>=5)
+        if(notas.size()!=0)
         {
-            aprobado = true;
+            if (media()>=5)
+            {
+                aprobado = true;
+            } 
         }
-        
         return aprobado;
     }
     
+    public int getNota(int index)
+    {
+        return notas.get(index);
+    }
     
+    public void putNota(int nota)
+    {
+        notas.add(nota);
+    }
 }
